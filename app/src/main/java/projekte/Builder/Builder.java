@@ -26,7 +26,7 @@ public class Builder {
         this.vertical = vertical;
 
         for (int i = 0; i<4;i++) {
-            Hexagon hex = new Hexagon();
+            Hexagon hex = new Hexagon(currentCoord);
             shapes.add(hex);
         }
 

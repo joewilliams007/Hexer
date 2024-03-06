@@ -1,13 +1,15 @@
 package projekte.Builder.Classes;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import projekte.util.Logger;
 
 public class Shape {
-    private List<Coordinate> coordinates;
+    private List<Coordinate> coordinates = new ArrayList<>();
     private int inlineThickness;
     private int outlineThickness;
+    private Coordinate startCoordinate;
     private String name;
     private String description;
 
@@ -18,12 +20,13 @@ public class Shape {
      * @param name The name of the shape.
      * @param description The description of the shape.
      */
-    public Shape(int inlineThickness, int outlineThickness, String name,
-            String description) {
+    public Shape(String name,
+            String description, int inlineThickness, int outlineThickness, Coordinate startCoordinate) {
         this.inlineThickness = inlineThickness;
         this.outlineThickness = outlineThickness;
         this.name = name;
         this.description = description;
+        this.startCoordinate = startCoordinate;
     }
 
     public void render() {
@@ -74,5 +77,11 @@ public class Shape {
         this.description = description;
     }
 
-    
+    public Coordinate getStartCoordinate() {
+        return startCoordinate;
+    }
+
+    public void setStartCoordinate(Coordinate startCoordinate) {
+        this.startCoordinate = startCoordinate;
+    }
 }
