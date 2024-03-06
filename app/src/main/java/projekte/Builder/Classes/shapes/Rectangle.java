@@ -1,7 +1,10 @@
-package projekte.Builder.Classes;
+package projekte.Builder.Classes.shapes;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import projekte.Builder.Classes.Coordinate;
+import projekte.Builder.Classes.Translation;
 
 public class Rectangle extends Shape {
     private int width;

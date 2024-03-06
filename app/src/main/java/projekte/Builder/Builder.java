@@ -4,9 +4,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 import projekte.Builder.Classes.Coordinate;
-import projekte.Builder.Classes.Hexagon;
-import projekte.Builder.Classes.Rectangle;
-import projekte.Builder.Classes.Shape;
+import projekte.Builder.Classes.patterns.HexagonPattern;
+import projekte.Builder.Classes.patterns.Pattern;
+import projekte.Builder.Classes.shapes.Rectangle;
+import projekte.Builder.Classes.shapes.Shape;
 import projekte.util.Display;
 
 public class Builder {
@@ -27,29 +28,27 @@ public class Builder {
         this.horizontal = horizontal;
         this.vertical = vertical;
 
-        // Build Hexagons.
-        boolean lower = false;
-        for (int i = 0; i<horizontal;i++) {
-            Hexagon hex = new Hexagon(currentCoord);
-            shapes.add(hex);
-
-            if (lower) {
-                currentCoord = Coordinate.move(currentCoord, 4, -3);
-            } else {
-                currentCoord = Coordinate.move(currentCoord, 3, 3);
-            }
-            lower = !lower;
-        }
-
-        // Build Rectangle.
-        Rectangle rect = new Rectangle(new Coordinate(0,0,0), 27, 9);
-        shapes.add(rect);
+        // Add shapes
+        shapes.add(new HexagonPattern(currentCoord, horizontal, vertical));
+        shapes.add(new Rectangle(new Coordinate(0,0,0), 27, 9));
 
         List<Coordinate> coords = new ArrayList<>();
         for (Shape shape : shapes) {
-            shape.render();
-            for (Coordinate coordinate : shape.getCoordinates()) {
-                coords.add(coordinate);
+
+            if (shape instanceof projekte.Builder.Classes.patterns.Pattern) {
+                Pattern pattern = (Pattern) shape;
+                pattern.render();
+                for (Shape pShape : pattern.getShapes()) {
+                    pShape.render();
+                    for (Coordinate coordinate : pShape.getCoordinates()) {
+                        coords.add(coordinate);
+                    }
+                }
+            } else {
+                shape.render();
+                for (Coordinate coordinate : shape.getCoordinates()) {
+                    coords.add(coordinate);
+                }
             }
         }
         Display.displayCoordinates(coords);

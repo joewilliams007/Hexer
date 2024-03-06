@@ -1,8 +1,9 @@
-package projekte.Builder.Classes;
+package projekte.Builder.Classes.shapes;
 
 import java.util.ArrayList;
 import java.util.List;
 
+import projekte.Builder.Classes.Coordinate;
 import projekte.util.Logger;
 
 public class Shape {
@@ -24,6 +25,12 @@ public class Shape {
             String description, int inlineThickness, int outlineThickness, Coordinate startCoordinate) {
         this.inlineThickness = inlineThickness;
         this.outlineThickness = outlineThickness;
+        this.name = name;
+        this.description = description;
+        this.startCoordinate = startCoordinate;
+    }
+
+    public Shape(String name, String description, Coordinate startCoordinate) {
         this.name = name;
         this.description = description;
         this.startCoordinate = startCoordinate;
