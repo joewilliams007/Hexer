@@ -3,19 +3,17 @@ package projekte.Builder;
 import projekte.util.Logger;
 
 public class MainBase {
-    public static Logger logger;
-
     public MainBase() {
-        logger = new Logger();
     }
 
     public void start() {
-        logger.log("system","Initiating builder...");
+        Logger.log("system","Initiating builder...");
+        init();
     }
 
     public void init() {
         Builder builder = new Builder();
-        logger.log("system","Initiation complete.");
+        Logger.log("system","Initiation complete.");
         builder.create(4, 2);
     }
 }

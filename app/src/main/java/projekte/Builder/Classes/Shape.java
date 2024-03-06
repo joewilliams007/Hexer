@@ -1,7 +1,8 @@
 package projekte.Builder.Classes;
 
 import java.util.List;
-import static projekte.Builder.MainBase.logger;;;
+
+import projekte.util.Logger;
 
 public class Shape {
     private List<Coordinate> coordinates;
@@ -25,8 +26,12 @@ public class Shape {
         this.description = description;
     }
 
-    public void renderShape() {
-        logger.log("main shape does not render");
+    public void render() {
+        Logger.log("main shape does not render");
+    }
+
+    public void renderStartMessage() {
+        Logger.log("Rendering "+name+".");
     }
 
     public List<Coordinate> getCoordinates() {

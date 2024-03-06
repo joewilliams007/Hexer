@@ -7,4 +7,8 @@ public class Hexagon extends Shape {
         super(0, 0, "Hexagon", "A geometrical shape");
     }
 
+    @Override
+    public void render() {
+        super.renderStartMessage();
+    }
 }

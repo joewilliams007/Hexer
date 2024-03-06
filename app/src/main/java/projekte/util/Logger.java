@@ -1,15 +1,11 @@
 package projekte.util;
 
 public class Logger {
-    public Logger() {
-        log("system","Logger initiated.");
-    }
-    
-    public void log(String message) {
-        log (null,message);
+    public static void log(String message) {
+        log ("",message);
     }
 
-    public void log(String type, String message) {
+    public static void log(String type, String message) {
         String präfix="";
         switch (type.toLowerCase()) {
             case "error":
