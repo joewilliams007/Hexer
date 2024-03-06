@@ -29,7 +29,7 @@ public class Builder {
         for (int i = 0; i<4;i++) {
             Hexagon hex = new Hexagon(currentCoord);
             shapes.add(hex);
-            currentCoord = Coordinate.move(currentCoord, 0, 5);
+            currentCoord = Coordinate.move(currentCoord, 5, 0);
         }
 
         List<Coordinate> coords = new ArrayList<>();
