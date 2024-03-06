@@ -12,9 +12,9 @@ public class Display {
         for (Coordinate coord : coords) {
             field[coord.getX()][coord.getY()] = 1;
         }
-        for (int x = 0; x<size; x++) {
+        for (int y = 0; y<size; y++) {
             System.out.println("");
-            for (int y = 0; y<size; y++) {
+            for (int x = 0; x<size; x++) {
                 if (field[x][y] == 1) {
                     System.out.print("x");
                 } else {

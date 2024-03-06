@@ -35,6 +35,5 @@ public class Hexagon extends Shape {
         for (Coordinate coords : super.getCoordinates()) {
             System.out.println(coords.getX()+" "+coords.getY());
         }
-        Display.displayCoordinates(super.getCoordinates());
     }
 }

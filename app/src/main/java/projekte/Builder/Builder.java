@@ -6,6 +6,7 @@ import java.util.List;
 import projekte.Builder.Classes.Coordinate;
 import projekte.Builder.Classes.Hexagon;
 import projekte.Builder.Classes.Shape;
+import projekte.util.Display;
 
 public class Builder {
     private List<Shape> shapes;
@@ -28,10 +29,16 @@ public class Builder {
         for (int i = 0; i<4;i++) {
             Hexagon hex = new Hexagon(currentCoord);
             shapes.add(hex);
+            currentCoord = Coordinate.move(currentCoord, 0, 5);
         }
 
+        List<Coordinate> coords = new ArrayList<>();
         for (Shape shape : shapes) {
             shape.render();
+            for (Coordinate coordinate : shape.getCoordinates()) {
+                coords.add(coordinate);
+            }
         }
+        Display.displayCoordinates(coords);
     }
 }
