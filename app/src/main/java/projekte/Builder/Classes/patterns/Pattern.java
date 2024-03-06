@@ -12,6 +12,12 @@ public class Pattern extends Shape {
     private int vertical;
     private Coordinate currentCoord;
 
+    /**
+     * A Pattern consists of multiple shapes.
+     * @param startCoordinate
+     * @param horizontal
+     * @param vertical
+     */
     public Pattern(Coordinate startCoordinate, int horizontal, int vertical) {
         super("Pattern", "A pattern contains a collection of shapes.",startCoordinate);
         this.shapes = new ArrayList<>();
@@ -49,6 +55,4 @@ public class Pattern extends Shape {
     public void setCurrentCoord(Coordinate currentCoord) {
         this.currentCoord = currentCoord;
     }
-
-    
 }

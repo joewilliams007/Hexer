@@ -12,8 +12,6 @@ import projekte.util.Display;
 
 public class Builder {
     private List<Shape> shapes;
-    private int horizontal;
-    private int vertical;
     private Coordinate currentCoord;
 
     /**
@@ -24,14 +22,21 @@ public class Builder {
         currentCoord = new Coordinate(0,1,0);
     }
 
+    /**
+     * Creates the shapes.
+     * @param horizontal
+     * @param vertical
+     */
     public void create(int horizontal, int vertical) {
-        this.horizontal = horizontal;
-        this.vertical = vertical;
-
         // Add shapes
         shapes.add(new HexagonPattern(currentCoord, horizontal, vertical));
         shapes.add(new Rectangle(new Coordinate(0,0,0), 27, 9));
+    }
 
+    /**
+     * Renders the coordiantes for each shape.
+     */
+    public void render() {
         List<Coordinate> coords = new ArrayList<>();
         for (Shape shape : shapes) {
 

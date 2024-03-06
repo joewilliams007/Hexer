@@ -1,10 +1,6 @@
 package projekte.Builder.Classes.patterns;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import projekte.Builder.Classes.Coordinate;
-import projekte.Builder.Classes.Translation;
 import projekte.Builder.Classes.shapes.Hexagon;
 
 public class HexagonPattern extends Pattern {

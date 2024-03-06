@@ -9,7 +9,6 @@ import projekte.Builder.Classes.Translation;
 public class Hexagon extends Shape {
 
     public Hexagon(Coordinate startCoordinate) {
-        // Hexagon
         super("Hexagon", "A geometrical shape that has 6 corners.",0, 0,startCoordinate);
     }
 

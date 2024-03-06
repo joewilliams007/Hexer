@@ -1,10 +1,17 @@
 package projekte.util;
 
 public class Logger {
+
+     /*
+     * Logs a message.
+     */
     public static void log(String message) {
         log ("",message);
     }
 
+    /*
+     * Logs a message with a specified type.
+     */
     public static void log(String type, String message) {
         String präfix="";
         switch (type.toLowerCase()) {
@@ -20,6 +27,9 @@ public class Logger {
         System.out.println(präfix+message+" ("+getCallerClassName()+")");
     }
 
+    /*
+     * Get the class that called the log.
+     */
     public static String getCallerClassName() { 
         StackTraceElement[] stElements = Thread.currentThread().getStackTrace();
         for (int i=1; i<stElements.length; i++) {

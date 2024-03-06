@@ -15,5 +15,6 @@ public class MainBase {
         Builder builder = new Builder();
         Logger.log("system","Initiation complete.");
         builder.create(8, 2);
+        builder.render();
     }
 }
