@@ -3,9 +3,3 @@
 
 # Ignore Gradle build output directory
 build
-app/bin
-app/bin/*
-app/bin/main/projekte/Builder/Builder.class
-app/bin/main/projekte/Builder/MainBase.class
-app/bin/main/projekte/Builder/Classes/Hexagon.class
-app/bin/main/projekte/util/Display.class
