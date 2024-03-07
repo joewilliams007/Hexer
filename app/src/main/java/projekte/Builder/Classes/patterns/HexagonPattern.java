@@ -7,6 +7,9 @@ public class HexagonPattern extends Pattern {
     private int horizontal;
     private int vertical;
 
+    /*
+     * A pattern that contains hexagons.
+     */
     public HexagonPattern(Coordinate startCoordinate,int horizontal, int vertical) {
         super(startCoordinate,horizontal,vertical);
         this.horizontal = horizontal;
@@ -18,16 +21,20 @@ public class HexagonPattern extends Pattern {
         super.renderStartMessage();
 
         boolean lower = false;
-        for (int i = 0; i<horizontal;i++) {
-            Hexagon hex = new Hexagon(getCurrentCoord());
-            getShapes().add(hex);
-
-            if (lower) {
-                setCurrentCoord(Coordinate.move(getCurrentCoord(), 4, -3));
-            } else {
-                setCurrentCoord(Coordinate.move(getCurrentCoord(), 3, 3));
+        for (int y = 0; y<vertical;y++) {
+            for (int x = 0; x<horizontal;x++) {
+                Hexagon hex = new Hexagon(getCurrentCoord());
+                getShapes().add(hex);
+    
+                if (lower) {
+                    setCurrentCoord(Coordinate.move(getCurrentCoord(), 4, -3));
+                } else {
+                    setCurrentCoord(Coordinate.move(getCurrentCoord(), 3, 3));
+                }
+                lower = !lower;
             }
-            lower = !lower;
+
+            setCurrentCoord(new Coordinate(0,getCurrentCoord().getY()+9,getCurrentCoord().getZ()));
         }
     }
 }

@@ -30,7 +30,7 @@ public class Builder {
     public void create(int horizontal, int vertical) {
         // Add shapes
         shapes.add(new HexagonPattern(currentCoord, horizontal, vertical));
-        shapes.add(new Rectangle(new Coordinate(0,0,0), 27, 9));
+        shapes.add(new Rectangle(new Coordinate(0,0,0), 27, 18));
     }
 
     /**

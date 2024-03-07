@@ -7,7 +7,7 @@ import projekte.Builder.Classes.Coordinate;
 public class Display {
     public static void displayCoordinates (List<Coordinate> coords) {
         int field[][];
-        int size = 30;
+        int size = 70;
         field = new int[size][size];
         for (Coordinate coord : coords) {
             field[coord.getX()][coord.getY()] = 1;
