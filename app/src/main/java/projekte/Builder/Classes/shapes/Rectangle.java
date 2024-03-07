@@ -11,10 +11,18 @@ public class Rectangle extends Shape {
     private int height;
 
     public Rectangle(Coordinate startCoordinate, int width, int height) {
-        // Rectangle
         super("Rectangle", "A geometrical shape that has 4 corners.",0, 0,startCoordinate);
         this.width = width;
         this.height = height;
+    }
+
+    public Rectangle(Coordinate startCoordinate, Coordinate endCoordinate) {
+        super("Rectangle", "A geometrical shape that has 4 corners.",0, 0,startCoordinate);
+        this.width = endCoordinate.getX()-startCoordinate.getX();
+        this.height = endCoordinate.getY()-startCoordinate.getY();
+
+        System.out.println("width: "+width);
+        System.out.println("height: "+height);
     }
 
     @Override

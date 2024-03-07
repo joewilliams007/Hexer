@@ -19,7 +19,7 @@ public class Builder {
      */
     public Builder() {
         shapes = new ArrayList<>();
-        currentCoord = new Coordinate(0,1,0);
+        currentCoord = new Coordinate(0,0,0);
     }
 
     /**
@@ -29,8 +29,8 @@ public class Builder {
      */
     public void create(int horizontal, int vertical) {
         // Add shapes
-        shapes.add(new HexagonPattern(currentCoord, horizontal, vertical));
-        shapes.add(new Rectangle(new Coordinate(0,0,0), 27, 18));
+        shapes.add(new HexagonPattern(currentCoord, horizontal, vertical,true));
+        // shapes.add(new Rectangle(new Coordinate(0,0,0), 27, 18));
     }
 
     /**
