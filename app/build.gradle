@@ -27,8 +27,6 @@ dependencies {
 
     // This dependency is used by the application.
     implementation 'com.google.guava:guava:31.1-jre'
-
-    implementation files('libs/jSerialComm-2.10.4.jar')
 }
 
 application {
