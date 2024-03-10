@@ -4,10 +4,13 @@
 package projekte;
 
 import projekte.Builder.MainBase;
+import projekte.server.SyncServer;
 
 public class App {
     public static void main(String[] args) {
-        MainBase base = new MainBase();
-        base.start();
+        // MainBase base = new MainBase();
+        // base.start();
+        SyncServer syncServer = new SyncServer();
+        syncServer.sendFile();
     }
 }
